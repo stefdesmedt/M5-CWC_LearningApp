@@ -19,7 +19,13 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    @Published var lessonDescription = NSAttributedString()
     var styleData:Data?
+    
+    //Current selected content and quiz
+    @Published var currentContent:Int?
+    
+    
     
     init() {
         
@@ -40,7 +46,6 @@ class ContentModel: ObservableObject {
         }
         
         currentModule = modules[currentModuleIndex]
-        
     }
     
     func beginLesson (_ lessonIndex: Int) {
@@ -55,6 +60,8 @@ class ContentModel: ObservableObject {
         //Set current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
         
+        //Set the lesson description
+        lessonDescription = addStyling(currentLesson!.explanation)
     }
     
     func hasNextLesson() -> Bool {
@@ -72,6 +79,7 @@ class ContentModel: ObservableObject {
         if currentLessonIndex < currentModule!.content.lessons.count {
             //Set lesson prop
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
 
         } else {
            
@@ -82,6 +90,30 @@ class ContentModel: ObservableObject {
         }
         
      
+    }
+    
+    //MARK: Code Styling
+    
+    private func addStyling(_ htmlString:String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        //Add styling data
+        if styleData != nil {
+            data.append(styleData!)
+        }
+        
+        //Add HTML data
+        data.append(Data(htmlString.utf8))
+        
+        //Convery to an attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            
+                resultString = attributedString
+        }
+        
+        return resultString
     }
     
 }

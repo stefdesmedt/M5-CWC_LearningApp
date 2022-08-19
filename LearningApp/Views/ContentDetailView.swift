@@ -25,6 +25,8 @@ struct ContentDetailView: View {
                     .cornerRadius(10)
             }
             
+            CodeTextView()
+            
             if model.hasNextLesson() {
                 Button(
                     action: {
@@ -34,10 +36,7 @@ struct ContentDetailView: View {
                        
                         ZStack {
                             
-                            Rectangle()
-                                .foregroundColor(Color.green)
-                                .cornerRadius(10)
-                                .shadow(color: .black, radius: 5)
+                            RectangleCard(color: Color.green)
                                 .frame(height: 48)
                             Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
                                 .foregroundColor(.white)
@@ -46,11 +45,29 @@ struct ContentDetailView: View {
                         
                         })
                
+            } else {
+                Button(
+                    action: {
+                        model.currentContent = nil
+                        },
+                    label: {
+                       
+                        ZStack {
+                            
+                            RectangleCard(color: Color.green)
+                                .frame(height: 48)
+                            Text("Complete")
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                        
+                        })
             }
             
             
         }
         .padding()
+        .navigationBarTitle(lesson?.title ?? "")
         
         
     
