@@ -9,6 +9,14 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
+    @Published var modules = [Module]()
+    var styleData:Data?
     
+    init() {
+        
+        self.modules = DataService.getLocalData()
+        
+        self.styleData = DataService.parseStyleData()
+    }
     
 }
