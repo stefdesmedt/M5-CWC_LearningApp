@@ -25,18 +25,25 @@ struct HomeView: View {
                             
                             VStack(spacing: 30) {
                                 
-                                HomeViewTile(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) lessons", time: module.content.time)
+                                NavigationLink(
+                                    destination: ContentView()
+                                        .onAppear(perform: {
+                                            model.beginModule(module.id)
+                                        })
+                                    ,
+                                    label: {
+                                        HomeViewTile(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) lessons", time: module.content.time)
+                                    })
+                                
                                 
                                 HomeViewTile(image: module.test.image, title: " \(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) questions", time: module.test.time)
                             }
                             
-                            
                         }
                     }.padding(30)
-                    
+                        .foregroundColor(.black)
                 }
             }
-            
             
             .navigationTitle("Get Started")
         }

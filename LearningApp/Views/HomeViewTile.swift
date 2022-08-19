@@ -40,6 +40,7 @@ struct HomeViewTile: View {
                     Text(description)
                         .padding(.bottom, 20)
                         .font(Font.system(size: 14))
+                        .multilineTextAlignment(.leading)
                     HStack{
                         Image(systemName: "text.book.closed")
                             .resizable()
