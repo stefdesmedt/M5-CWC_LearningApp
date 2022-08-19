@@ -15,8 +15,8 @@ class ContentModel: ObservableObject {
     init() {
         
         self.modules = DataService.getLocalData()
-        
         self.styleData = DataService.parseStyleData()
+    
     }
     
 }
