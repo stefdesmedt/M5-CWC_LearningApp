@@ -24,6 +24,7 @@
 		1648309428AFC7B10007FB03 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309328AFC7B10007FB03 /* CodeTextView.swift */; };
 		1648309628B011900007FB03 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309528B011900007FB03 /* RectangleCard.swift */; };
 		1648309828B013820007FB03 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309728B013820007FB03 /* TestView.swift */; };
+		1648309A28B02E740007FB03 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309928B02E740007FB03 /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		1648309328AFC7B10007FB03 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		1648309528B011900007FB03 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		1648309728B013820007FB03 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		1648309928B02E740007FB03 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1648305228AF852D0007FB03 /* HomeView.swift */,
+				1648309928B02E740007FB03 /* ResultsView.swift */,
 				1648306D28AFA75B0007FB03 /* HomeViewTile.swift */,
 				1648306F28AFAAF30007FB03 /* ContentView.swift */,
 				1648307128AFB1BF0007FB03 /* ContentViewTile.swift */,
@@ -229,6 +232,7 @@
 				1648306C28AF8E0A0007FB03 /* DataService.swift in Sources */,
 				1648309628B011900007FB03 /* RectangleCard.swift in Sources */,
 				1648306E28AFA75B0007FB03 /* HomeViewTile.swift in Sources */,
+				1648309A28B02E740007FB03 /* ResultsView.swift in Sources */,
 				1648309828B013820007FB03 /* TestView.swift in Sources */,
 				1648309428AFC7B10007FB03 /* CodeTextView.swift in Sources */,
 			);
