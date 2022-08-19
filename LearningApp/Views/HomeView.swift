@@ -37,8 +37,18 @@ struct HomeView: View {
                                         HomeViewTile(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) lessons", time: module.content.time)
                                     })
                                 
+                                NavigationLink(
+                                    destination: TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        })
+                                    ,
+                                    tag: module.id,
+                                    selection: $model.currentTestSelection,
+                                    label: {
+                                        HomeViewTile(image: module.test.image, title: " \(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) questions", time: module.test.time)
+                                    })
                                 
-                                HomeViewTile(image: module.test.image, title: " \(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) questions", time: module.test.time)
                             }
                             
                         }

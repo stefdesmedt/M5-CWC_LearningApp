@@ -23,6 +23,7 @@
 		1648307628AFB5870007FB03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648307528AFB5870007FB03 /* Constants.swift */; };
 		1648309428AFC7B10007FB03 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309328AFC7B10007FB03 /* CodeTextView.swift */; };
 		1648309628B011900007FB03 /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309528B011900007FB03 /* RectangleCard.swift */; };
+		1648309828B013820007FB03 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648309728B013820007FB03 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		1648307528AFB5870007FB03 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1648309328AFC7B10007FB03 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		1648309528B011900007FB03 /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
+		1648309728B013820007FB03 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				1648307328AFB2CE0007FB03 /* ContentDetailView.swift */,
 				1648309528B011900007FB03 /* RectangleCard.swift */,
 				1648309328AFC7B10007FB03 /* CodeTextView.swift */,
+				1648309728B013820007FB03 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				1648306C28AF8E0A0007FB03 /* DataService.swift in Sources */,
 				1648309628B011900007FB03 /* RectangleCard.swift in Sources */,
 				1648306E28AFA75B0007FB03 /* HomeViewTile.swift in Sources */,
+				1648309828B013820007FB03 /* TestView.swift in Sources */,
 				1648309428AFC7B10007FB03 /* CodeTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
