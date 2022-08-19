@@ -68,24 +68,6 @@ class ContentModel: ObservableObject {
         codeText = addStyling(currentLesson!.explanation)
     }
     
-    //MARK: Test naviation
-    
-    func beginTest(_ moduleId:Int ) {
-        
-        //Set current module
-        beginModule(moduleId)
-        
-        //Set current question
-        currentQuestionIndex = 0
-        //If there are questions set question to first one
-        if currentModule?.test.questions.count ?? 0 > 0 {
-            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
-            //Set the question content
-            codeText = addStyling(currentQuestion!.content)
-            
-        }
-    }
-    
     func hasNextLesson() -> Bool {
         
         return currentLessonIndex + 1 < currentModule!.content.lessons.count
@@ -110,10 +92,42 @@ class ContentModel: ObservableObject {
             currentLessonIndex = 0
             
         }
+    }
+    
+    //MARK: Test naviation
+    
+    func beginTest(_ moduleId:Int ) {
         
-       
+        //Set current module
+        beginModule(moduleId)
         
-     
+        //Set current question
+        currentQuestionIndex = 0
+        //If there are questions set question to first one
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            //Set the question content
+            codeText = addStyling(currentQuestion!.content)
+            
+        }
+    }
+    
+    func advanceToNextQuestion() {
+        
+        currentQuestionIndex += 1
+        
+        if currentQuestionIndex < currentModule!.test.questions.count {
+            
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeText = addStyling(currentQuestion!.content)
+            
+        } else {
+            
+            currentQuestionIndex = 0
+            currentQuestion = nil
+            
+        }
+        
     }
     
     //MARK: Code Styling

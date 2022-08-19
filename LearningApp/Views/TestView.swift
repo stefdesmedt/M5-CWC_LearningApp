@@ -14,6 +14,20 @@ struct TestView: View {
     @State var numCorrect = 0
     @State var submittedStatus = false
     
+    var buttonText: String {
+        
+        if submittedStatus {
+            
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                return "Finish"
+            }
+        } else {
+            return "Submit"
+        }
+        
+        return "Next"
+    }
+    
     var body: some View {
         
         if model.currentQuestion != nil {
@@ -79,9 +93,19 @@ struct TestView: View {
                 Button(
                     action: {
                         
-                        submittedStatus = true
-                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                                              numCorrect += 1
+                        if submittedStatus == true {
+                            
+                            model.advanceToNextQuestion()
+                            submittedStatus = false
+                            selectedAnswerIndex = nil
+                            
+                        } else {
+                            
+                            submittedStatus = true
+                            if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                                                  numCorrect += 1
+                            }
+                            
                         }
                         
                     },
@@ -89,7 +113,7 @@ struct TestView: View {
                         ZStack{
                             RectangleCard(color: Color.green)
                                 .frame(height: 60)
-                            Text("Submit")
+                            Text(buttonText)
                                 .foregroundColor(.white)
                                 .bold()
                         }.padding(.horizontal, 30)
